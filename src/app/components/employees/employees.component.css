@@ -1,0 +1,71 @@
+.container {
+  padding: 6%;
+
+  height: 100vh;
+}
+::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+  visibility: hidden !important;
+}
+.mat-drawer {
+  padding: 5% 1%;
+  width: 50%;
+  overflow-y: visible;
+}
+.sidenav_navigation {
+ 
+  position: absolute;
+  top: 5%;
+  left: -1%;
+}
+.sidenav_navigation_button .mat-icon {
+  color: #8496f8;
+}
+.sidenav_navigation_button {
+  cursor: pointer;
+  background-color: white !important;
+  border: 0px;
+  padding: 50% 0px !important;
+  border-radius: 50%;
+  z-index: 400;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+h1 {
+  text-decoration: underline;
+  text-underline-offset: 30%;
+  font-weight: 500;
+}
+.mat-mdc-header-row {
+  background-color: rgb(50, 54, 57);
+  color: white;
+}
+table {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.button-container button {
+  cursor: pointer;
+  background-color: rgb(50, 54, 57);
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  /* font-size: 1px; */
+  padding: 1%;
+  letter-spacing: 0.006rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.mat-icon {
+  vertical-align: middle;
+}

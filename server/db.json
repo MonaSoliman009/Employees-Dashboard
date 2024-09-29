@@ -1,20 +1,8 @@
 {
   "employees": [
     {
-      "id": "30",
-      "name": "Sara Khan",
-      "title": "Project Manager",
-      "yOE": 8,
-      "department": {
-        "id": 4,
-        "name": "Project Management"
-      }
-    }
-  ],
-  "users": [
-    {
-      "id": "50",
-      "name": "Nour Hassan",
+      "id": "70",
+      "name": "Nour hamada",
       "title": "UX Designer",
       "yOE": 6,
       "department": {
@@ -23,24 +11,30 @@
       }
     },
     {
-      "id": "60",
-      "name": "Ahmed Mahmoud",
-      "title": "DevOps Engineer",
-      "yOE": 7,
+      "id": "90",
+      "name": "Reem Saad",
+      "title": "Marketing Manager",
+      "yOE": 5,
       "department": {
         "id": 2,
         "name": "Human Resources"
       }
+    }
+  ],
+  "users": [
+    {
+      "id": "50",
+      "name": "Nour hamada",
+      "title": "Ui Designer",
+      "yOE": 1,
+      "department": 4
     },
     {
       "id": "20",
-      "name": "Reem Saad",
+      "name": "Karim Ali",
       "title": "Marketing Manager",
       "yOE": 8,
-      "department": {
-        "id": 2,
-        "name": "Human Resources"
-      }
+      "department": 3
     }
   ],
   "departments": [

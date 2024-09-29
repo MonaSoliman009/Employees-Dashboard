@@ -47,6 +47,9 @@ h1 {
 table {
   width: 100%;
 }
+.mat-mdc-form-field{
+  margin-right: 2%;
+}
 
 .button-container {
   display: flex;
@@ -54,20 +57,31 @@ table {
   width: 100%;
   margin-bottom: 2%;
 }
-.button-container button {
+.sidenav_container button{
+  background-color: rgb(50, 54, 57) !important;
+  color: white !important;
+  padding: 3% ;
+  margin-right: 2%;
+
+}
+.empty_content {
+  margin-top:10%;
+  text-align: center;
+}
+button {
   cursor: pointer;
   background-color: rgb(50, 54, 57);
-  color: white;
+  color: white ;
   text-align: center;
-  font-weight: 700;
-  /* font-size: 1px; */
-  padding: 1%;
+  font-weight: 500;
+  /*font-size: 1px;
+  */padding: 1% ;
   letter-spacing: 0.006rem;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  border-radius: 15px ;
+  -webkit-border-radius: 15px ;
+  -moz-border-radius: 15px ;
+  -ms-border-radius: 15px ;
+  -o-border-radius: 15px ;
 }
 .mat-icon {
   vertical-align: middle;

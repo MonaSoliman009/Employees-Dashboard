@@ -1,4 +1,4 @@
-@if (shouldRun) {
+
 <mat-sidenav-container class="example-container">
   <mat-sidenav position="end" #sidenav [mode]="'over'">
    <div class="sidenav_navigation">
@@ -59,7 +59,7 @@
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef> Action </th>
           <td mat-cell *matCellDef="let element">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" color="warn"></mat-icon>
+            <mat-icon (click)="deleteEmployeeById(element.id)" aria-hidden="false" aria-label="Example home icon" fontIcon="delete" color="warn"></mat-icon>
 
           </td>
         </ng-container>
@@ -70,6 +70,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-} @else {
-<div>Please open on Stackblitz to see result</div>
-}

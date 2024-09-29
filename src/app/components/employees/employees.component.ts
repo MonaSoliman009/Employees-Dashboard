@@ -1,32 +1,86 @@
-import { Component } from '@angular/core';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-export interface PeriodicElement {
-  name: string;
-  title: string;
-  yearsOfExperience: number;
-  department: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { EmployeesService } from '../../../services/employees.service';
+import { DataSource, Iemployee } from '../../../models/employee';
+import { UsersService } from '../../../services/users.service';
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Hydrogen', title: 'Hydrogen', yearsOfExperience: 2,department:'Marketing'},
-  { name: 'Helium', title: 'Hydrogen', yearsOfExperience: 3,department:'HR'},
-  { name: 'Lithium', title:'Hydrogen', yearsOfExperience: 8,department:'Technical'},
-  { name: 'Beryllium', title: 'Hydrogen', yearsOfExperience: 10,department:'Hr'},
- 
-];
 @Component({
   selector: 'app-employees',
   standalone: true,
-  imports: [MatTableModule,MatIconModule,MatSidenavModule, MatButtonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    MatTableModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './employees.component.html',
-  styleUrl: './employees.component.css'
+  styleUrl: './employees.component.css',
 })
-export class EmployeesComponent {
-  displayedColumns: string[] = ['name', 'title', 'yearsOfExperience', 'department',"action"];
-  dataSource = ELEMENT_DATA;
-  shouldRun =true;
+export class EmployeesComponent implements OnInit {
+  displayedColumns: string[] = [
+    'name',
+    'title',
+    'yearsOfExperience',
+    'department',
+    'action',
+  ];
+  employees: Iemployee[] = [];
+
+  dataSource: DataSource[] = [];
+  constructor(private _EmployeesService: EmployeesService,private _UsersService:UsersService) {}
+  ngOnInit(): void {
+    this.getAllEmployees();
+  }
+
+  getAllEmployees() {
+    this._EmployeesService.getEmployees().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.employees = res;
+        this.dataSource = res.map((emp) => ({
+          id: emp.id,
+          name: emp.name,
+          title: emp.title,
+          yearsOfExperience: emp.yOE,
+          department: emp.department.name,
+        }));
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+  deleteEmployeeById(id: string) {
+    console.log(id);
+
+    this._EmployeesService.deleteEmployee(id).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.saveNewUser(res)
+        this.getAllEmployees();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+  saveNewUser(user:Iemployee){
+  this._UsersService.saveNewUser(user).subscribe(
+    {
+      next: (res) => {
+        console.log(res);
+       
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    }
+  )
+  }
 }

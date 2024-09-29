@@ -2,7 +2,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "https://openlibrary.org",
+  baseUrl: "http://localhost:3000",
 };
 
 

@@ -19,6 +19,16 @@
         "id": 2,
         "name": "Human Resources"
       }
+    },
+    {
+      "id": "20",
+      "name": "Karim Ali",
+      "title": "Marketing Manager",
+      "yOE": 8,
+      "department": {
+        "id": 3,
+        "name": "Design"
+      }
     }
   ],
   "users": [
@@ -28,13 +38,6 @@
       "title": "Ui Designer",
       "yOE": 1,
       "department": 4
-    },
-    {
-      "id": "20",
-      "name": "Karim Ali",
-      "title": "Marketing Manager",
-      "yOE": 8,
-      "department": 3
     }
   ],
   "departments": [

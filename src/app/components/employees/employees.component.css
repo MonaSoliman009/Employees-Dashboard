@@ -1,7 +1,11 @@
 .container {
-  padding: 6%;
+  padding: 3%;
 
   height: 100vh;
+}
+.sidenav_container{
+  padding: 6%;
+
 }
 ::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
   visibility: hidden !important;
@@ -45,7 +49,7 @@ h1 {
   color: white;
 }
 table {
-  width: 100%;
+  width: 70%;
 }
 .mat-mdc-form-field{
   margin-right: 2%;

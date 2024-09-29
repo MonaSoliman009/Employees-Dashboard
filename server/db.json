@@ -1,0 +1,61 @@
+{
+  "employees": [
+    {
+      "id": "f2b5",
+      "name": "Ali Ahmed",
+      "title": "Senior Software Engineer",
+      "yOE": 10,
+      "department": 1
+    },
+    {
+      "id": "0a3b",
+      "name": "Reem Saad",
+      "title": "Marketing Manager",
+      "yOE": 8,
+      "department":2
+    }, {
+      "name": "Sara Khan",
+      "title": "Project Manager",
+      "yOE": 8,
+      "department": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "Omar Youssef",
+      "title": "Data Analyst",
+      "yOE": 5,
+      "department": 3
+    },
+    {
+      "name": "Nour Hassan",
+      "title": "UX Designer",
+      "yOE": 6,
+      "department": 4
+    },
+    {
+      "name": "Ahmed Mahmoud",
+      "title": "DevOps Engineer",
+      "yOE": 7,
+      "department": 2
+    }
+  ],
+  "department": [
+    {
+      "id": 1,
+      "name": "Engineering"
+    },
+    {
+      "id": 2,
+      "name": "Human Resources"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Project Management"
+    }
+  ]
+}

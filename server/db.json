@@ -1,16 +1,6 @@
 {
   "employees": [
     {
-      "id": "70",
-      "name": "Nour hamada",
-      "title": "UX Designer",
-      "yOE": 6,
-      "department": {
-        "id": 4,
-        "name": "Project Management"
-      }
-    },
-    {
       "id": "90",
       "name": "Reem Saad",
       "title": "Marketing Manager",
@@ -38,23 +28,30 @@
       "title": "Ui Designer",
       "yOE": 1,
       "department": 4
+    },
+    {
+      "id": "70",
+      "name": "Nour hamada",
+      "title": "UX Designer",
+      "yOE": 6,
+      "department": 4
     }
   ],
   "departments": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Engineering"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Human Resources"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Design"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Project Management"
     }
   ]

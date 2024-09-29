@@ -14,6 +14,8 @@ import { DepartmentsService } from '../../../services/departments.service';
 import { Idepartment } from '../../../models/department';
 import { NgIf } from '@angular/common';
 import { IUser } from '../../../models/iuser';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-employees',
   standalone: true,
@@ -33,6 +35,7 @@ import { IUser } from '../../../models/iuser';
   styleUrl: './employees.component.css',
 })
 export class EmployeesComponent implements OnInit {
+
   displayedColumnsEmployeesTable: string[] = [
     'name',
     'title',
@@ -63,7 +66,13 @@ export class EmployeesComponent implements OnInit {
     this.getAllDepartments();
     // this.getAllUsers()
   }
-
+  showAlert(errorMessage:string) {
+    Swal.fire({
+      title: 'Error!',
+      text: errorMessage,
+      icon: 'error'
+    });
+  }
   getAllEmployees() {
     this._EmployeesService.getEmployees().subscribe({
       next: (res) => {
@@ -72,29 +81,30 @@ export class EmployeesComponent implements OnInit {
         this.dataSource = res;
       },
       error: (err) => {
-        console.log(err);
+        this.showAlert("There is no employees to display , try again")
       },
     });
   }
-  getAllUsers() {
-    this._UsersService.getUsers().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.users = res;
-        this.usersData = res
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
+  // getAllUsers() {
+  //   this._UsersService.getUsers().subscribe({
+  //     next: (res) => {
+  //       console.log(res);
+  //       this.users = res;
+  //       this.usersData = res
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     },
+  //   });
+  // }
   getAllDepartments() {
     this._DepartmentsService.getDepartments().subscribe({
       next: (res) => {
         this.departments = res;
       },
       error: (err) => {
-        console.log(err);
+        this.showAlert("There is no departments to display , try again")
+        ;
       },
     });
   }
@@ -108,7 +118,8 @@ export class EmployeesComponent implements OnInit {
         this.getAllEmployees();
       },
       error: (err) => {
-        console.log(err);
+        this.showAlert("Failed , try again")
+
       },
     });
   }
@@ -118,7 +129,8 @@ export class EmployeesComponent implements OnInit {
         console.log(res);
       },
       error: (err) => {
-        console.log(err);
+        this.showAlert("Failed , try again")
+
       },
     });
   }
@@ -130,7 +142,8 @@ export class EmployeesComponent implements OnInit {
         this.search(this.myForm.value.name,this.myForm.value.department)
       },
       error: (err) => {
-        console.log(err);
+        this.showAlert("Failed , try again")
+
       },
     });
   }
@@ -145,7 +158,8 @@ export class EmployeesComponent implements OnInit {
          
         },
         error: (err) => {
-          console.log(err);
+          this.showAlert("Failed , try again")
+
         },
       });
     }
@@ -159,7 +173,8 @@ export class EmployeesComponent implements OnInit {
         this.usersData = res
       },
       error: (err) => {
-        console.log(err);
+        this.showAlert("Failed , try again")
+
       },
     });
   }
